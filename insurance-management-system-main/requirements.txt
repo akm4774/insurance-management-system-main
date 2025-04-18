@@ -1,7 +1,7 @@
 Flask==2.0.2             # the core web framework :contentReference[oaicite:0]{index=0}
 Werkzeug==2.0.1
 gunicorn==20.1.0         # production WSGI server :contentReference[oaicite:1]{index=1}
-psycopg2‑binary==2.9.10  # Postgres driver :contentReference[oaicite:2]{index=2}
+psycopg2_binary==2.9.10  # Postgres driver :contentReference[oaicite:2]{index=2}
 sendgrid==6.11.0         # SendGrid email API helper :contentReference[oaicite:3]{index=3}
 itsdangerous==2.2.0      # token serializer for email confirmation :contentReference[oaicite:4]{index=4}
-python‑dotenv==1.1.0     # load your .env file :contentReference[oaicite:5]{index=5}
+python_dotenv==1.1.0     # load your .env file :contentReference[oaicite:5]{index=5}
