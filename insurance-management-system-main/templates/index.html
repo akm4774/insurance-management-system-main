@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Insurance Management System</title>
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient background */
+            color: white;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            backdrop-filter: blur(10px);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white !important;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-custom {
+            width: 200px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            margin: 10px;
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        }
+
+        .btn-primary-custom {
+            background-color: #4e54c8;
+            border: none;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #373b9f;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary-custom {
+            background-color: #ffc107;
+            border: none;
+        }
+
+        .btn-secondary-custom:hover {
+            background-color: #e6a600;
+            transform: scale(1.05);
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">Insurance Management System </a>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container">
+        <h1>Welcome to the Insurance Management System</h1>
+        <p class="lead">Manage your policies, claims, and more with ease.</p>
+
+        <a href="/register" class="btn btn-primary btn-custom btn-primary-custom">Register</a>
+        <a href="/login" class="btn btn-secondary btn-custom btn-secondary-custom">Login</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 Insurance Management System. All Rights Reserved.Developed by @lopalopa2007
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

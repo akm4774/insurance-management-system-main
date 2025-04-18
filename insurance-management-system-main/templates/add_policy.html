@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #007bff; /* Header background color */
+            color: #ffffff; /* Header text color */
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000; /* Ensures the header stays on top */
+        }
+
+        .sidebar {
+            height: 100vh; /* Full height */
+            background-color: #343a40; /* Dark background color */
+            color: #ffffff; /* White text color */
+            padding: 20px; /* Padding around the content */
+            position: fixed; /* Fixed position */
+            top: 0; /* Aligns to the top */
+            left: 0; /* Aligns to the left */
+            width: 250px; /* Fixed width */
+            z-index: 999; /* Ensures the sidebar is behind the header */
+            overflow-y: auto; /* Ensures sidebar content is scrollable if needed */
+        }
+
+        .sidebar h4 {
+            color: #ffffff; /* White text color for heading */
+            margin-bottom: 20px; /* Spacing below the heading */
+        }
+
+        .sidebar a {
+            display: block; /* Make links block level to stack them vertically */
+            color: #ffffff; /* White text color for links */
+            text-decoration: none; /* Remove underline */
+            padding: 10px; /* Padding around links */
+            border-radius: 5px; /* Rounded corners */
+            margin-bottom: 10px; /* Spacing between links */
+            transition: background-color 0.3s; /* Smooth transition effect */
+        }
+
+        .sidebar a:hover {
+            background-color: #495057; /* Darker background on hover */
+        }
+
+        .content {
+            margin-left: 270px; /* Space for sidebar */
+            margin-top: 60px; /* Space for header */
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: #ffffff; /* White background for form */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-back {
+            margin-bottom: 20px;
+            background-color: #6c757d; /* Grey background for back button */
+            border: none;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .btn-back:hover {
+            background-color: #5a6268; /* Darker grey on hover */
+        }
+
+        .footer {
+            background-color: #f8f9fa; /* Light background color */
+            padding: 10px 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-top: 1px solid #e9ecef;
+        }
+    </style>
+    <title>Add Policy</title>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="d-inline">Insurance Management System</h1>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <div class="form-container">
+            <button class="btn btn-back" onclick="window.history.back()"><i class="fas fa-arrow-left"></i> Go Back</button>
+            <h2>Add New Policy</h2>
+            <form method="POST" action="/add_policy">
+                <div class="form-group">
+                    <label for="policy_name">Policy Name</label>
+                    <input type="text" class="form-control" id="policy_name" name="policy_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="policy_type">Policy Type</label>
+                    <input type="text" class="form-control" id="policy_type" name="policy_type" required>
+                </div>
+                <div class="form-group">
+                    <label for="premium_amount">Premium Amount</label>
+                    <input type="number" class="form-control" id="premium_amount" name="premium_amount" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Policy</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Insurance Management System. All Rights Reserved.Developed By @lopalopa2007
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

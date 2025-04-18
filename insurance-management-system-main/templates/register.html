@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+        crossorigin="anonymous"
+        />
+
+    <title>Register</title>
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background: linear-gradient(to right, #00c6ff, #0072ff); /* Gradient background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+            backdrop-filter: blur(10px); /* Blurred effect */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            margin: 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group label {
+            color: #fff;
+        }
+
+        .form-control {
+            background: rgba(255, 255, 255, 0.7); /* Slightly transparent input fields */
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.2rem;
+            background-color: #28a745;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+        .form-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Display Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="alert alert-dismissible fade show" role="alert">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <h2>Create Account</h2>
+        <form method="POST" action="/register">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                <small class="form-text">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label> 
+                <div class="input-group"> 
+                    <input type="password" 
+                           class="form-control" 
+                           id="password" 
+                           name="password" 
+                           placeholder="Enter your password" 
+                           required> 
+                    <div class="input-group-append"> 
+                        <span class="input-group-text"> 
+                            <i class="fas fa-eye toggle-password" style="cursor: pointer;"></i> 
+                        </span> 
+                    </div> 
+                </div> 
+            </div>
+            <div class="form-row">
+                <div class="col-6">
+                    <button type="submit" class="btn btn-primary" style="width: 150px; ">Register</button>
+                </div>
+                <div class="col-6">
+                    <button type="submit" class="btn btn-secondary"style="width: 150px;align: center;" onclick="window.location.href='/'">Cancel</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $(".toggle-password").click(function(){
+            // find the related input
+            var input = $(this).closest('.input-group').find('input');
+            // toggle its type
+            if (input.attr("type") === "password") {
+              input.attr("type", "text");
+              $(this).removeClass('fa-eye').addClass('fa-eye-slash');
+            } else {
+              input.attr("type", "password");
+              $(this).removeClass('fa-eye-slash').addClass('fa-eye');
+            }
+          });
+        });
+      </script>
+      
+</body>
+</html>

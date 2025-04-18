@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+            margin: 0;
+        }
+
+        .header {
+            background-color: #007bff; /* Blue background */
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .content {
+            margin-top: 70px; /* Space for header */
+            padding: 20px;
+        }
+
+        .form-container {
+            background-color: #ffffff; /* White background for form */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group label {
+            color: #495057; /* Darker text color */
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .go-back-btn {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer {
+            background-color: #343a40; /* Dark background */
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+    <title>Add Claim</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Insurance Management System </h1>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <!-- Go Back Button -->
+            <div class="go-back-btn">
+                <a href="/dashboard" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Go Back</a>
+            </div>
+
+            <div class="form-container">
+                <h2 class="mb-4">Add Claim</h2>
+                <form method="POST" action="/add_claim">
+                    <div class="form-group">
+                        <label for="policy_id">Policy ID</label>
+                        <input type="text" class="form-control" id="policy_id" name="policy_id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="claim_date">Claim Date</label>
+                        <input type="date" class="form-control" id="claim_date" name="claim_date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="claim_amount">Claim Amount</label>
+                        <input type="number" class="form-control" id="claim_amount" name="claim_amount" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Claim</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Insurance Management System. All Rights Reserved.Developed By @lopalopa2007
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

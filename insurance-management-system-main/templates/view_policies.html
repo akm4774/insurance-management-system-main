@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Light gray background */
+            margin: 0;
+        }
+
+        .header {
+            background-color: #007bff; /* Blue background */
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .content {
+            margin-top: 70px; /* Space for header */
+            padding: 20px;
+        }
+
+        .table-container {
+            background-color: #ffffff; /* White background for table */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .table thead th {
+            background-color: #007bff; /* Blue header background */
+            color: white;
+            text-align: center;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background-color: #f2f2f2; /* Light gray rows */
+        }
+
+        .footer {
+            background-color: #343a40; /* Dark background */
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .go-back-btn {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+    </style>
+    <title>View Policies</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Insurance Management System </h1>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <!-- Go Back Button -->
+            <div class="go-back-btn">
+                <a href="/dashboard" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Go Back</a>
+            </div>
+
+            <div class="table-container">
+                <h2 class="mb-4">Your Policies</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Policy Name</th>
+                            <th>Policy Type</th>
+                            <th>Premium Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for policy in policies %}
+                        <tr>
+                            <td>{{ policy[2] }}</td>
+                            <td>{{ policy[3] }}</td>
+                            <td>{{ policy[4] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        &copy; 2024 Insurance Management System. All Rights Reserved.Developed By @lopalopa2007
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

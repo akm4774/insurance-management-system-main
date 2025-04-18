@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles for Navbar */
+        .navbar-custom {
+            background-color: #343a40; /* Dark background color */
+            height: 100px;
+        }
+
+        .navbar-custom .navbar-brand {
+            color: #ffffff; /* White text color for brand */
+        }
+
+        .navbar-custom .navbar-nav .nav-link {
+            color: #ffffff; /* White text color for links */
+        }
+
+        .navbar-custom .btn-danger {
+            background-color: #dc3545; /* Red background color for button */
+            border: none;
+        }
+
+        .navbar-custom .btn-danger:hover {
+            background-color: #c82333; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="#">Insurance Management System</a>
+        <div class="ml-auto">
+            <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+        </div>
+    </nav>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
