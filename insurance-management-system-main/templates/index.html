@@ -4,29 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Insurance Management System</title>
 
     <!-- Custom Styles -->
     <style>
         body {
-            background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient background */
+            background: linear-gradient(135deg, #007bff, #6610f2);
             color: white;
             font-family: 'Arial', sans-serif;
-            height: 100vh;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
         }
 
         .navbar {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(0, 0, 0, 0.2);
             padding: 1rem;
             backdrop-filter: blur(10px);
-            width: 100%;
-            position: fixed;
-            top: 0;
-            z-index: 1;
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .navbar-brand {
@@ -35,51 +34,134 @@
             color: white !important;
         }
 
-        .container {
+        .hero-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            margin-top: 100px;
+            padding: 2rem;
+        }
+
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            transition: all 0.3s ease;
         }
 
         h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .lead {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
         }
 
         .btn-custom {
-            width: 200px;
-            padding: 10px 20px;
+            min-width: 200px;
+            padding: 0.75rem 1.5rem;
             font-size: 1.2rem;
-            margin: 10px;
-            transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .btn-primary-custom {
-            background-color: #4e54c8;
+            background-color: #007bff;
             border: none;
         }
 
         .btn-primary-custom:hover {
-            background-color: #373b9f;
-            transform: scale(1.05);
+            background-color: #0069d9;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         .btn-secondary-custom {
             background-color: #ffc107;
             border: none;
+            color: #212529;
         }
 
         .btn-secondary-custom:hover {
-            background-color: #e6a600;
-            transform: scale(1.05);
+            background-color: #e0a800;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-icon {
+            margin-right: 8px;
         }
 
         footer {
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 0.9rem;
+            text-align: center;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .content-box {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .lead {
+                font-size: 1.1rem;
+            }
+            
+            .content-box {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn-custom {
+                min-width: 180px;
+                font-size: 1rem;
+                padding: 0.6rem 1.2rem;
+            }
+            
+            .content-box {
+                padding: 1.2rem;
+            }
+            
+            .hero-section {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
@@ -87,21 +169,31 @@
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand" href="#">Insurance Management System </a>
+        <div class="container">
+            <a class="navbar-brand" href="#">Insurance Management System</a>
+        </div>
     </nav>
 
     <!-- Main content -->
-    <div class="container">
-        <h1>Welcome to the Insurance Management System</h1>
-        <p class="lead">Manage your policies, claims, and more with ease.</p>
+    <div class="hero-section">
+        <div class="content-box">
+            <h1>Welcome to the Insurance Management System</h1>
+            <p class="lead">Manage your policies, claims, and more with ease. Our platform provides a secure and efficient way to handle all your insurance needs.</p>
 
-        <a href="/register" class="btn btn-primary btn-custom btn-primary-custom">Register</a>
-        <a href="/login" class="btn btn-secondary btn-custom btn-secondary-custom">Login</a>
+            <div class="buttons-container">
+                <a href="/register" class="btn btn-custom btn-primary-custom">
+                    <i class="fas fa-user-plus btn-icon"></i>Register
+                </a>
+                <a href="/login" class="btn btn-custom btn-secondary-custom">
+                    <i class="fas fa-sign-in-alt btn-icon"></i>Login
+                </a>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        &copy; 2024 Insurance Management System. All Rights Reserved.Developed by @lopalopa2007
+        &copy; 2024 Insurance Management System. All Rights Reserved. Developed by @lopalopa2007
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
